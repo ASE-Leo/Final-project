@@ -48,6 +48,8 @@ string Account::getSurname()
 	return _surname;
 }
 
+
+
 bool Account::operator==(const Account& A)
 {
 	if (this->_login == A._login && this->_password == A._password)
@@ -58,9 +60,7 @@ bool Account::operator==(const Account& A)
 
 ostream& operator<<(ostream& output, const Account& A)
 {
-	output << "Логин - " << A._login << endl
-		<< "Имя - " << A._name << endl
-		<< "Фамилия - " << A._surname << endl;
+	output << A._name << " " << A._surname << endl;
 
 	return output;
 }
@@ -200,4 +200,18 @@ int Users::findAccount(string login, string password)
 		return -1;
 		cout << endl << "Неверно введен логин или пароль.." << endl;
 	}
+}
+
+string Users::friendsList(int index)
+{
+	int choice;
+	for (int i = 0; i < m_length; ++i)
+	{
+		if (i == index)
+			continue;
+		cout << i + 1 << ". " << m_data[i] << endl;
+	}
+	cout << "С кем открыть чат?" << endl;
+	cin >> choice;
+	return m_data[choice - 1].getLogin();
 }

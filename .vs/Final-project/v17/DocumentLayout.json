@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,26 +30,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Authorization.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp",
               "RelativeDocumentMoniker": "Authorization.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp",
               "RelativeToolTip": "Authorization.cpp",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAAAMgAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T14:32:20.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Authorization.h",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h",
               "RelativeDocumentMoniker": "Authorization.h",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h",
               "RelativeToolTip": "Authorization.h",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAEIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-16T14:32:04.241Z",
               "EditorCaption": ""
@@ -62,7 +62,7 @@
               "RelativeDocumentMoniker": "Main.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-15T16:02:07.652Z",
               "EditorCaption": ""
