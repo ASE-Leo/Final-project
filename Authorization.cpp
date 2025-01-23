@@ -48,7 +48,74 @@ string Account::getSurname()
 	return _surname;
 }
 
+void Account::print()
+{
+	bool open = true;
+	while (open)
+	{
+		cout << "Мой профиль:" << endl << endl
+			<< "Имя: " << getName() << endl
+			<< "Фамилия: " << getSurname() << endl << endl;
 
+		int choice;
+		cout << "1. Изменить данные" << endl
+			<< "2. Назад" << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			change();
+			break;
+		case 2:
+			open = false;
+			break;
+		default:
+			cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
+			break;
+		}
+	}
+}
+void Account::change()
+{
+	int choice_2;
+	string data;
+	cout << endl << "Какие данные хотите изменить?" << endl
+		<< "1. Имя" << endl
+		<< "2. Фамилия" << endl
+		<< "3. Изменить логин" << endl
+		<< "4. Изменить пароль" << endl
+		<< "5. Назад" << endl;
+	std::cin >> choice_2;
+	switch (choice_2)
+	{
+	case 1:
+		cout << "Введите новое имя: ";
+		std::cin >> data;
+		setName(data);
+		break;
+	case 2:
+		cout << "Введите новую фамилию: ";
+		std::cin >> data;
+		setSurname(data);
+		break;
+	case 3:
+		cout << "Введите новый логин: ";
+		std::cin >> data;
+		setLogin(data);
+		break;
+	case 4:
+		cout << "Введите новый пароль: ";
+		std::cin >> data;
+		setPassword(data);
+		break;
+	case 5:
+		break;
+	default:
+		cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
+		break;
+	}
+}
 
 bool Account::operator==(const Account& A)
 {
@@ -57,7 +124,6 @@ bool Account::operator==(const Account& A)
 	else
 		return false;
 }
-
 ostream& operator<<(ostream& output, const Account& A)
 {
 	output << A._name << " " << A._surname << endl;
@@ -155,16 +221,16 @@ void Users::NewAcc()
 	string accData;
 	cout << "Регистрация" << endl << endl
 		<< "Введите Ваше имя: ";
-	cin >> accData;
+	std::cin >> accData;
 	Acc.setName(accData);
 	cout << "Фамилия: ";
-	cin >> accData;
+	std::cin >> accData;
 	Acc.setSurname(accData);
 	cout << "Придумайте логин: ";
-	cin >> accData;
+	std::cin >> accData;
 	Acc.setLogin(accData);
 	cout << "Придумайте пароль: ";
-	cin >> accData;
+	std::cin >> accData;
 	Acc.setPassword(accData);
 
 	Account* data = new Account[m_length + 1];
@@ -174,6 +240,8 @@ void Users::NewAcc()
 	delete[] m_data;
 	m_data = data;
 	++m_length;
+
+	cout << endl << "Ваш аккаунт успешно создан!" << endl << endl;
 }
 
 int Users::getLength() const
@@ -196,22 +264,27 @@ int Users::findAccount(string login, string password)
 		}
 	}
 	if (!A)
-	{
 		return -1;
-		cout << endl << "Неверно введен логин или пароль.." << endl;
-	}
 }
-
-string Users::friendsList(int index)
+Account& Users::friendsList(int index)
 {
 	int choice;
 	for (int i = 0; i < m_length; ++i)
 	{
 		if (i == index)
 			continue;
-		cout << i + 1 << ". " << m_data[i] << endl;
+		cout << i + 1 << ". " << m_data[i];
 	}
-	cout << "С кем открыть чат?" << endl;
-	cin >> choice;
-	return m_data[choice - 1].getLogin();
+
+	std::cin >> choice;
+	return m_data[choice - 1];
+}
+int Users::Login()
+{
+	string login, password;
+	cout << "Для входа необходимо ввести логин: ";
+	std::cin >> login;
+	cout << "Введите пароль: ";
+	std::cin >> password;
+	return findAccount(login, password);
 }

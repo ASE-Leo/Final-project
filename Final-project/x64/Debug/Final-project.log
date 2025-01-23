@@ -1,5 +1,5 @@
 ﻿  Authorization.cpp
   Main.cpp
   Создание кода...
-C:\Users\User\Desktop\CPP\Final-project\Authorization.cpp(203,1): warning C4715: Users::findAccount: значение возвращается не при всех путях выполнения
+C:\Users\User\Desktop\CPP\Final-project\Authorization.cpp(268,1): warning C4715: Users::findAccount: значение возвращается не при всех путях выполнения
   Final-project.vcxproj -> C:\Users\User\Desktop\CPP\Final-project\x64\Debug\Final-project.exe

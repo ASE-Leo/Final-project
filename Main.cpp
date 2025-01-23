@@ -1,11 +1,12 @@
 #include "Authorization.h"
+#include "Chat.h"
 
 
 int main(int argc, char* argv[])
 {
 	bool open = true;
 	Users Us;
-	Chat Ch;
+	Messenger Ch;
 	Us.Acc("qwe", "123", "Victor", "Moon");
 	Us.Acc("ewq", "321", "Semion", "Bob");
 	while (open)
@@ -18,38 +19,49 @@ int main(int argc, char* argv[])
 		cin >> choice;
 		if (choice == 1)
 		{
-			string login, password;
-			int i;
-			cout << "Для входа необходимо ввести логин: ";
-			cin >> login;
-			cout << "Введите пароль: ";
-			cin >> password;
-			i = Us.findAccount(login, password);
-			if (i < 0)
-				return 0;
-			cout << "Здравствуйте, " << Us[i].getName() << "!" << endl;
-
-			//bool open_2 = true;
-			//while (open_2)
+			int i = Us.Login();
+			if (i > 0)
 			{
-				int choice_2;
-				cout << "1. Мой аккаунт" << endl
-					<< "2. Сообщения" << endl
-					<< "3. Выйти" << endl;
-				cin >> choice_2;
+				cout << endl << "Здравствуйте, " << Us[i].getName() << "!" << endl;
 
-				if (choice_2 == 2)
+				bool open_2 = true;
+				while (open_2)
 				{
-					cout << "Кому Вы хотите написать сообщение?" << endl;
-					string fr = Us.friendsList(i);
-					Ch.openChat(Us[i].getLogin(), fr);
-					//Ch.newChat(Us[i].getLogin(), fr);
+					int choice_2;
+					cout << endl << "1. Мой профиль" << endl
+						<< "2. Сообщения" << endl
+						<< "3. Выйти" << endl;
+					cin >> choice_2;
+
+					switch (choice_2)
+					{
+					case 1:
+						Us[i].print();
+						break;
+					case 2:
+						cout << endl << "С кем открыть чат?" << endl;
+						Ch.openChat(Us[i], Us.friendsList(i), Us[i].getName());
+						break;
+					case 3:
+						open_2 = false;
+						cout << "До свидания, " << Us[i].getName() << "!" << endl;
+						break;
+					default:
+						cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
+						break;
+					}
 				}
+			}
+			else
+			{
+				cout << endl << "Неверно введен логин или пароль.. Попробуйте ещё раз" << endl << endl;
+				continue;
 			}
 		}
 		if (choice == 2)
 		{
 			Us.NewAcc();
+			continue;
 		}
 		if (choice == 3)
 		{
@@ -57,6 +69,8 @@ int main(int argc, char* argv[])
 			open = false;
 			break;
 		}
+		else
+			cout << "Такого варианта нет.. Попробуйте ещё раз" << endl << endl;
 	}
 	return 0;
 }

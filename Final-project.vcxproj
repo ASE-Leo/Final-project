@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Authorization.cpp" />
+    <ClCompile Include="Chat.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authorization.h" />
+    <ClInclude Include="Chat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,6 +21,9 @@
     <ClCompile Include="Authorization.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Chat.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
@@ -29,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authorization.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Chat.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
