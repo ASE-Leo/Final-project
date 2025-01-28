@@ -130,7 +130,7 @@ void Chat::newMes(string send)
 	++c_length;
 	cout << "Сообщение отправлено!" << endl << endl;
 }
-void Chat::printMes(const Account& acc)
+void Chat::printMes()
 {
 	cout << endl << "Ваш чат:" << endl;
 	for (int i = 0; i < c_length; ++i)
@@ -165,6 +165,15 @@ Chat& Messenger::operator[](int index)
 	{
 	}
 	return m_chat[index];
+}
+
+void Messenger::general()
+{
+	Chat* chat = new Chat[m_length + 1]();
+
+	delete[] m_chat;
+	m_chat = chat;
+	++m_length;
 }
 
 void Messenger::erase()
@@ -222,13 +231,13 @@ void Messenger::openChat(const Account& acc1, const Account& acc2, string send)
 	{
 		if (m_chat[i] == mes1 || m_chat[i] == mes2)
 		{
-			int choice;
-			m_chat[i].printMes(acc1);
+			char choice;
+			m_chat[i].printMes();
 			cout << endl << "Вы хотите написать сообщение?" << endl
 				<< "1. Да" << endl
 				<< "2. Нет" << endl;
 			cin >> choice;
-			if (choice == 1)
+			if (choice == '1')
 			{
 				m_chat[i].newMes(send);
 			}
@@ -247,12 +256,12 @@ void Messenger::openChat(const Account& acc1, const Account& acc2, string send)
 
 		cout << endl << "Чат создан!" << endl;
 
-		int choice;
+		char choice;
 		cout << "Вы хотите написать сообщение?" << endl
 			<< "1. Да" << endl
 			<< "2. Нет" << endl;
 		cin >> choice;
-		if (choice == 1)
+		if (choice == '1')
 		{
 			chat[m_length].newMes(send);
 		}
@@ -260,5 +269,18 @@ void Messenger::openChat(const Account& acc1, const Account& acc2, string send)
 		delete[] m_chat;
 		m_chat = chat;
 		++m_length;
+	}
+}
+void Messenger::openChat(string send)
+{
+	char choice;
+	m_chat[0].printMes();
+	cout << endl << "Вы хотите написать сообщение?" << endl
+		<< "1. Да" << endl
+		<< "2. Нет" << endl;
+	cin >> choice;
+	if (choice == '1')
+	{
+		m_chat[0].newMes(send);
 	}
 }

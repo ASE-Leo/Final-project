@@ -30,7 +30,7 @@ public:
 	void setAcc2(const Account& acc2);
 
 	void newMes(string send);
-	void printMes(const Account& acc);
+	void printMes();
 };
 
 class Messenger
@@ -45,10 +45,14 @@ public:
 	Messenger& operator=(const Messenger& ch);
 	Chat& operator[](int index);
 
+	void general();
+
+
 	void erase();
 	void reallocate(int newLength);
 	void resize(int newLength);
 	int getLength() const;
 
 	void openChat(const Account& acc1, const Account& acc2, string send);
+	void openChat(string send);
 };

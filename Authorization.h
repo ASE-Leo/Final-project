@@ -54,6 +54,6 @@ public:
 	int getLength() const;
 
 	int findAccount(string login, string password);
-	Account& friendsList(int index);
+	int friendsList(int index);
 	int Login();
 };

@@ -57,17 +57,17 @@ void Account::print()
 			<< "Имя: " << getName() << endl
 			<< "Фамилия: " << getSurname() << endl << endl;
 
-		int choice;
+		char choice;
 		cout << "1. Изменить данные" << endl
 			<< "2. Назад" << endl;
 		cin >> choice;
 
 		switch (choice)
 		{
-		case 1:
+		case '1':
 			change();
 			break;
-		case 2:
+		case '2':
 			open = false;
 			break;
 		default:
@@ -78,7 +78,7 @@ void Account::print()
 }
 void Account::change()
 {
-	int choice_2;
+	char choice_2;
 	string data;
 	cout << endl << "Какие данные хотите изменить?" << endl
 		<< "1. Имя" << endl
@@ -89,27 +89,27 @@ void Account::change()
 	std::cin >> choice_2;
 	switch (choice_2)
 	{
-	case 1:
+	case '1':
 		cout << "Введите новое имя: ";
 		std::cin >> data;
 		setName(data);
 		break;
-	case 2:
+	case '2':
 		cout << "Введите новую фамилию: ";
 		std::cin >> data;
 		setSurname(data);
 		break;
-	case 3:
+	case '3':
 		cout << "Введите новый логин: ";
 		std::cin >> data;
 		setLogin(data);
 		break;
-	case 4:
+	case '4':
 		cout << "Введите новый пароль: ";
 		std::cin >> data;
 		setPassword(data);
 		break;
-	case 5:
+	case '5':
 		break;
 	default:
 		cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
@@ -266,18 +266,27 @@ int Users::findAccount(string login, string password)
 	if (!A)
 		return -1;
 }
-Account& Users::friendsList(int index)
+int Users::friendsList(int index)
 {
-	int choice;
-	for (int i = 0; i < m_length; ++i)
+	bool open = true;
+	while (open)
 	{
-		if (i == index)
-			continue;
-		cout << i + 1 << ". " << m_data[i];
-	}
+		int choice;
+		for (int i = 0; i < m_length; ++i)
+		{
+			if (i == index)
+				continue;
+			cout << i + 1 << ". " << m_data[i];
+		}
 
-	std::cin >> choice;
-	return m_data[choice - 1];
+		cout << m_length + 1 << ". Общий чат" << endl
+			<< m_length + 2 << ". Назад" << endl;
+		std::cin >> choice;
+		if (choice > 0 && choice <= m_length + 2)
+			return choice - 1;
+		else
+			cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
+	}
 }
 int Users::Login()
 {
