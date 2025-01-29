@@ -1,142 +1,9 @@
 #include "Authorization.h"
 
-Account::Account() = default;
-Account::Account(string login, string password)
-{
-	_login = login;
-	_password = password;
-	_name = "";
-	_surname = "";
-}
-Account::Account(string login, string password, string name, string surname)
-{
-	_login = login;
-	_password = password;
-	_name = name;
-	_surname = surname;
-}
-void Account::setLogin(string login)
-{
-	_login = login;
-}
-void Account::setPassword(string password)
-{
-	_password = password;
-}
-void Account::setName(string name)
-{
-	_name = name;
-}
-void Account::setSurname(string surname)
-{
-	_surname = surname;
-}
-string Account::getLogin()
-{
-	return _login;
-}
-string Account::getPassword()
-{
-	return _password;
-}
-string Account::getName()
-{
-	return _name;
-}
-string Account::getSurname()
-{
-	return _surname;
-}
-
-void Account::print()
-{
-	bool open = true;
-	while (open)
-	{
-		cout << "Мой профиль:" << endl << endl
-			<< "Имя: " << getName() << endl
-			<< "Фамилия: " << getSurname() << endl << endl;
-
-		char choice;
-		cout << "1. Изменить данные" << endl
-			<< "2. Назад" << endl;
-		cin >> choice;
-
-		switch (choice)
-		{
-		case '1':
-			change();
-			break;
-		case '2':
-			open = false;
-			break;
-		default:
-			cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
-			break;
-		}
-	}
-}
-void Account::change()
-{
-	char choice_2;
-	string data;
-	cout << endl << "Какие данные хотите изменить?" << endl
-		<< "1. Имя" << endl
-		<< "2. Фамилия" << endl
-		<< "3. Изменить логин" << endl
-		<< "4. Изменить пароль" << endl
-		<< "5. Назад" << endl;
-	std::cin >> choice_2;
-	switch (choice_2)
-	{
-	case '1':
-		cout << "Введите новое имя: ";
-		std::cin >> data;
-		setName(data);
-		break;
-	case '2':
-		cout << "Введите новую фамилию: ";
-		std::cin >> data;
-		setSurname(data);
-		break;
-	case '3':
-		cout << "Введите новый логин: ";
-		std::cin >> data;
-		setLogin(data);
-		break;
-	case '4':
-		cout << "Введите новый пароль: ";
-		std::cin >> data;
-		setPassword(data);
-		break;
-	case '5':
-		break;
-	default:
-		cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
-		break;
-	}
-}
-
-bool Account::operator==(const Account& A)
-{
-	if (this->_login == A._login && this->_password == A._password)
-		return true;
-	else
-		return false;
-}
-ostream& operator<<(ostream& output, const Account& A)
-{
-	output << A._name << " " << A._surname << endl;
-
-	return output;
-}
-
-
-
 Users::Users()
 {
 	m_length = 0;
-	m_data = new Account[m_length]();
+	m_data = new Account<std::string>[m_length]();
 }
 Users::~Users()
 {
@@ -150,10 +17,10 @@ Users& Users::operator=(const Users& A)
 		return *this;
 	}
 	reallocate(A.getLength());
-	copy_n(A.m_data, m_length, m_data);
+	std::copy_n(A.m_data, m_length, m_data);
 	return *this;
 }
-Account& Users::operator[](int index)
+Account<std::string>& Users::operator[](int index)
 {
 	if (index < 0 || index >= m_length)
 	{
@@ -175,7 +42,7 @@ void Users::reallocate(int newLength)
 	{
 		return;
 	}
-	m_data = new Account[newLength];
+	m_data = new Account<std::string>[newLength];
 	m_length = newLength;
 }
 void Users::resize(int newLength)
@@ -189,12 +56,12 @@ void Users::resize(int newLength)
 		return;
 	}
 
-	Account* data = new Account[newLength];
+	Account<std::string>* data = new Account<std::string>[newLength];
 
 	if (m_length > 0)
 	{
 		int elementsToCopy = (newLength > m_length) ? m_length : newLength;
-		copy_n(m_data, elementsToCopy, data);
+		std::copy_n(m_data, elementsToCopy, data);
 	}
 
 	delete[] m_data;
@@ -203,12 +70,12 @@ void Users::resize(int newLength)
 	m_length = newLength;
 }
 
-void Users::Acc(string login, string password, string name, string surname)
+void Users::Acc(std::string login, std::string password, std::string name, std::string surname)
 {
-	Account Acc(login, password, name, surname);
+	Account<std::string> Acc(login, password, name, surname);
 	
-	Account* data = new Account[m_length + 1];
-	copy_n(m_data, m_length, data);
+	Account<std::string>* data = new Account<std::string>[m_length + 1];
+	std::copy_n(m_data, m_length, data);
 	data[m_length] = Acc;
 
 	delete[] m_data;
@@ -217,31 +84,111 @@ void Users::Acc(string login, string password, string name, string surname)
 }
 void Users::NewAcc()
 {
-	Account Acc;
-	string accData;
-	cout << "Регистрация" << endl << endl
-		<< "Введите Ваше имя: ";
+	Account<std::string> Acc;
+	std::string accData;
+	bool open = true;
+	std::cout << "Регистрация" << std::endl << std::endl
+		<<  "Придумайте логин: ";
 	std::cin >> accData;
-	Acc.setName(accData);
-	cout << "Фамилия: ";
-	std::cin >> accData;
-	Acc.setSurname(accData);
-	cout << "Придумайте логин: ";
-	std::cin >> accData;
-	Acc.setLogin(accData);
-	cout << "Придумайте пароль: ";
-	std::cin >> accData;
-	Acc.setPassword(accData);
+	for (int i = 0; i < m_length; ++i)
+	{
+		if (accData == m_data[i].getLogin())
+		{
+			std::cout << std::endl << "Аккаунт с таким логином уже существует.." << std::endl;
+			open = false;
+		}
+	}
+	if (open)
+	{
+		Acc.setLogin(accData);
+		std::cout << "Введите Ваше имя : ";
+		std::cin >> accData;
+		Acc.setName(accData);
+		std::cout << "Фамилия: ";
+		std::cin >> accData;
+		Acc.setSurname(accData);
+		std::cout << "Придумайте пароль: ";
+		std::cin >> accData;
+		Acc.setPassword(accData);
 
-	Account* data = new Account[m_length + 1];
-	copy_n(m_data, m_length, data);
-	data[m_length] = Acc;
+		Account<std::string>* data = new Account<std::string>[m_length + 1];
+		std::copy_n(m_data, m_length, data);
+		data[m_length] = Acc;
 
-	delete[] m_data;
-	m_data = data;
-	++m_length;
+		delete[] m_data;
+		m_data = data;
+		++m_length;
 
-	cout << endl << "Ваш аккаунт успешно создан!" << endl << endl;
+		std::cout << std::endl << "Ваш аккаунт успешно создан!" << std::endl << std::endl;
+	}
+}
+void Users::recovery()
+{
+	char choice;
+	std::string login, password, name, surname;
+	int count = 0;
+	std::cout << std::endl << "Восстановить пароль по: " << std::endl << "1. По логину" << std::endl
+		<< "2. По имени и фамилии" << std::endl << std::endl
+		<< "3. Назад" << std::endl;
+	std::cin >> choice;
+	switch (choice)
+	{
+	case '1':
+		std::cout << std::endl << "Введите логин: ";
+		std::cin >> login;
+		for (int i = 0; i < m_length; ++i)
+		{
+			if (m_data[i].getLogin() == login)
+			{
+				char choice_2;
+				std::cout << std::endl << m_data[i] << "Это ваш аккаунт?" << std::endl
+					<< "1. Да" << std::endl << "2. Нет" << std::endl;
+				std::cin >> choice_2;
+				if (choice_2 == '1')
+				{
+					std::cout << std::endl << "Введите новый пароль:";
+					std::cin >> password;
+					m_data[i].setPassword(password);
+					std::cout << "Ваш пароль успешно изменен!" << std::endl;
+				}
+			}
+			else
+				++count;
+		}
+		if (count == m_length)
+			std::cout << std::endl << "Такого аккаунта не существует.." << std::endl;
+		break;
+	case '2':
+		std::cout << std::endl << "Ваше имя: ";
+		std::cin >> name;
+		std::cout << "Ваша фамилия: ";
+		std::cin >> surname;
+		for (int i = 0; i < m_length; ++i)
+		{
+			if (m_data[i].getName() == name && m_data[i].getSurname() == surname)
+			{
+				char choice_2;
+				std::cout << std::endl << "Логин - " << m_data[i].getLogin() << std::endl
+					<< m_data[i] << "Это ваш аккаунт?" << std::endl
+					<< "1. Да" << std::endl << "2. Нет" << std::endl;
+				std::cin >> choice_2;
+				if (choice_2 == '1')
+				{
+					std::cout << std::endl << "Введите новый пароль:";
+					std::cin >> password;
+					m_data[i].setPassword(password);
+					std::cout << "Ваш пароль успешно изменен!" << std::endl;
+				}
+			}
+			else
+				++count;
+		}
+		if (count == m_length)
+			std::cout << std::endl << "Такого аккаунта не существует.." << std::endl;
+		break;
+	default:
+		break;
+	}
 }
 
 int Users::getLength() const
@@ -249,9 +196,9 @@ int Users::getLength() const
 	return m_length;
 }
 
-int Users::findAccount(string login, string password)
+int Users::findAccount(std::string login, std::string password)
 {
-	Account Acc(login, password);
+	Account<std::string> Acc(login, password);
 
 	bool A = false;
 	
@@ -276,24 +223,24 @@ int Users::friendsList(int index)
 		{
 			if (i == index)
 				continue;
-			cout << i + 1 << ". " << m_data[i];
+			std::cout << i + 1 << ". " << m_data[i];
 		}
 
-		cout << m_length + 1 << ". Общий чат" << endl
-			<< m_length + 2 << ". Назад" << endl;
+		std::cout << m_length + 1 << ". Общий чат" << std::endl
+			<< m_length + 2 << ". Назад" << std::endl;
 		std::cin >> choice;
 		if (choice > 0 && choice <= m_length + 2)
 			return choice - 1;
 		else
-			cout << "Такого варианта нет.. Попробуйте ещё раз" << endl;
+			std::cout << "Такого варианта нет.. Попробуйте ещё раз" << std::endl;
 	}
 }
 int Users::Login()
 {
-	string login, password;
-	cout << "Для входа необходимо ввести логин: ";
+	std::string login, password;
+	std::cout << "Для входа необходимо ввести логин: ";
 	std::cin >> login;
-	cout << "Введите пароль: ";
+	std::cout << "Введите пароль: ";
 	std::cin >> password;
 	return findAccount(login, password);
 }

@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Chat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Authorization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{03677D1E-FF5C-462C-A4BE-897804A0D866}|Final-project.vcxproj|solutionrelative:Chat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,25 +43,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-01-29T00:11:39.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Chat.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.cpp",
               "RelativeDocumentMoniker": "Chat.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.cpp",
               "RelativeToolTip": "Chat.cpp",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAAAOAAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOAAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-23T10:43:30.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Chat.h",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.h",
               "RelativeDocumentMoniker": "Chat.h",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Chat.h",
               "RelativeToolTip": "Chat.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAD4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-23T10:43:52.295Z",
               "EditorCaption": ""
@@ -70,33 +87,33 @@
               "RelativeDocumentMoniker": "Authorization.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.cpp",
               "RelativeToolTip": "Authorization.cpp",
-              "ViewState": "AgIAANkAAAAAAAAAAAAAAAwBAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-16T14:32:20.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Authorization.h",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h",
               "RelativeDocumentMoniker": "Authorization.h",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Authorization.h",
               "RelativeToolTip": "Authorization.h",
-              "ViewState": "AgIAACkAAAAAAAAAAAAiwDgAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-16T14:32:04.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
               "ToolTip": "C:\\Users\\User\\Desktop\\CPP\\Final-project\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAiwDQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-15T16:02:07.652Z",
               "EditorCaption": ""

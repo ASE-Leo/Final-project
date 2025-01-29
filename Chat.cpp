@@ -6,7 +6,7 @@ Chat::Chat()
 	c_mes = new string[c_length]();
 	c_name = new string[c_length]();
 }
-Chat::Chat(const Account& acc1, const Account& acc2)
+Chat::Chat(const Account<std::string>& acc1, const Account<std::string>& acc2)
 {
 	c_acc1 = acc1;
 	c_acc2 = acc2;
@@ -98,11 +98,11 @@ int Chat::getLength() const
 	return c_length;
 }
 
-void Chat::setAcc1(const Account& acc1)
+void Chat::setAcc1(const Account<std::string>& acc1)
 {
 	c_acc1 = acc1;
 }
-void Chat::setAcc2(const Account& acc2)
+void Chat::setAcc2(const Account<std::string>& acc2)
 {
 	c_acc2 = acc2;
 }
@@ -222,7 +222,7 @@ int Messenger::getLength() const
 	return m_length;
 }
 
-void Messenger::openChat(const Account& acc1, const Account& acc2, string send)
+void Messenger::openChat(const Account<std::string>& acc1, const Account<std::string>& acc2, string send)
 {
 	int count = 0;
 	Chat mes1(acc1, acc2);

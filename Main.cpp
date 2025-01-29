@@ -13,10 +13,10 @@ int main(int argc, char* argv[])
 	while (open)
 	{
 		char choice;
-		cout << "Добрый день!" << endl
+		cout << endl << "Добрый день!" << endl
 			<< "Мы рады видеть Вас в нашем чате." << endl
 			<< "Для начала работы Вам необходимо войти в свой аккаунт или зарегистрироваться, если Вы ещё не пользовались нашим чатом." << endl << endl
-			<< "1. Вход" << endl << "2. Зарегистрироваться" << endl << "3. Выход из программы" << endl;
+			<< "1. Вход" << endl << "2. Зарегистрироваться" << endl << endl << "3. Забыли пароль?" << endl << "4. Выход из программы" << endl;
 		cin >> choice;
 		switch (choice)
 		{
@@ -72,6 +72,9 @@ int main(int argc, char* argv[])
 			continue;
 			break;
 		case '3':
+			Us.recovery();
+			break;
+		case '4':
 			cout << "Хорошего дня!";
 			open = false;
 			break;
